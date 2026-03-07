@@ -7,8 +7,12 @@ import type { MapData } from "@/lib/types";
 
 const BeastMap = dynamic(() => import("@/components/BeastMap"), { ssr: false });
 
+// Use /api proxy in production (avoids HTTPS->HTTP mixed content block)
+// Falls back to direct URL for local dev
 const API_URL =
-  process.env.NEXT_PUBLIC_API_URL || "http://129.158.41.81:3100/v1";
+  typeof window !== "undefined" && window.location.protocol === "https:"
+    ? "/api"
+    : process.env.NEXT_PUBLIC_API_URL || "http://129.158.41.81:3100/v1";
 
 export default function Home() {
   const [data, setData] = useState<MapData | null>(null);
