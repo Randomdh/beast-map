@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #030712;
+  --foreground: #ededed;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+/* Leaflet popup styling for dark theme */
+.leaflet-popup-content-wrapper {
+  background: #1f2937 !important;
+  color: #e5e7eb !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+}
+
+.leaflet-popup-tip {
+  background: #1f2937 !important;
+}
+
+.leaflet-popup-close-button {
+  color: #9ca3af !important;
+}
+
+/* Beast pin reset */
+.beast-pin {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Hide Leaflet attribution on mobile */
+@media (max-width: 768px) {
+  .leaflet-control-attribution {
+    display: none;
+  }
+}
