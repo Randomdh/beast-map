@@ -14,7 +14,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Beast Map — A Kid Called Beast",
+  title: "Beast Map | A Kid Called Beast",
   description:
     "See where AKCB holders are around the world. Interactive map of the Beast community.",
 };
